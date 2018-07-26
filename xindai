@@ -1,0 +1,13 @@
+import pandas as pd
+import numpy as np
+from sklearn.ensemble import RandomForestRegressor
+
+
+data_train = pd.read_csv("C:\\Users\\gaoluteng\\Desktop\\predict\\xindaipre\\application_train.csv")
+data_test = pd.read_csv("C:\\Users\\gaoluteng\\Desktop\\predict\\xindaipre\\application_test.csv")
+
+data_train.loc[["CODE_GENDER"]=="F","GENDER"]=0
+data_train.loc[["CODE_GENDER"]=="M","GENDER"]=1
+
+data_train.loc[["CNT_CHILDREN"]=="N","GENDER"]=0
+data_train.loc[["CNT_CHILDREN"]=="Y","GENDER"]=1
